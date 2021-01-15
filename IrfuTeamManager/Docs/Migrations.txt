@@ -1,0 +1,15 @@
+﻿=========================================== IRFUContext =================================================
+
+Enable-Migrations -ContextTypeName IrfuContext -MigrationsDirectory Migrations\IRFU
+
+add-migration -ConfigurationTypeName IrfuTeamManager.Migrations.IRFU.Configuration "InitialCreate"              <------Rename to keep track of migrations by changing title in brackets!
+
+update-database -ConfigurationTypeName IrfuTeamManager.Migrations.IRFU.Configuration
+
+======================================= ApplicationDbContext ============================================
+
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName IrfuTeamManager.Migrations.Identity.Configuration "InitialIdentity"       <------Rename to keep track of migrations by changing title in brackets!
+
+update-database -ConfigurationTypeName IrfuTeamManager.Migrations.Identity.Configuration
